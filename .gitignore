@@ -1,3 +1,5 @@
 .idea/
 __pycache__/
+agent/__pycache__/
 unity-environment.log
+Banana_Windows_x86_64/

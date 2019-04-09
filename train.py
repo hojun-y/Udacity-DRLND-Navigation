@@ -18,7 +18,7 @@ brain = env.brains[brain_name]
 epsilon = 1.
 steps = 0
 episodes = 0
-total_scores = deque(maxlen=10)
+total_scores = deque(maxlen=100)
 scores = []
 train_flag = True
 loss = 0.
@@ -55,13 +55,15 @@ while train_flag:
 
             if steps > config['train_start']:
                 loss = agent.train()
-                if epsilon > config['epsilon_lower_bound']:
-                    epsilon *= config['epsilon_decay']
 
             if steps % config['sync_target_every'] == 0:
                 agent.sync_network()
 
             if done:
+
+                if epsilon > config['epsilon_lower_bound'] and steps > config['train_start']:
+                    epsilon *= config['epsilon_decay']
+
                 episodes += 1
                 total_scores.append(total_score)
                 scores.append(total_score)
