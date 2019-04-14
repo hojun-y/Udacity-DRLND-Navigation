@@ -28,7 +28,41 @@ Download the environment from the links below:
  After downloading the environment, unzip it into the folder where the `train.py` is located.
  
  ### 2. Install the Dependencies
+ Install some dependencies.
+ #### If you're using `conda`:
+  > ```
+  > conda install pytorch torchvision cudatoolkit=9.0 -c pytorch
+  > conda install numpy scipy matplotlib 
+  > ```
+  
+ #### Or using `pip`:
+ > ```
+ > # Linux or MacOS only:
+ > pip install torch
+ >
+ > # Windows only:
+ > pip install https://download.pytorch.org/whl/cu90/torch-1.0.1-cp36-cp36m-win-amd64.wml
+ >
+ > pip install torchvision
+ > pip install numpy scipy matplotlib
+ > ```
+ ### 3. Install Unity ML-Agents
+ You should install ml-agents **version 0.4**.<br>
+ (Because of the API version of the environment, latest version is not compatible)
+ ```
+ pip install mlagents==0.4
+ ```
+ For more information about Unity ML-Agents, please visit the
+ <a href="https://github.com/Unity-Technologies/ml-agents/blob/master/docs/">official documentation</a>.
 
-## Reward Plot
+## 2. Train the agent
+execute `train.py` after activate the python environment.
+```
+python train.py
+```
+
+If needed, you can change the hyperparameters by modifying `config.py` before training.
+
+## 3. Result(Reward Plot)
 The environment was solved in about ~700 episodes.
 <img src="/save/reward.png" width="85%">
