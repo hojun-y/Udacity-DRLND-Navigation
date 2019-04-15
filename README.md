@@ -61,7 +61,12 @@ execute `train.py` after activate the python environment.
 python train.py
 ```
 
-If needed, you can change the hyperparameters by modifying `config.py` before training.
+If needed, you can change the hyperparameters by modifying `config.py` before training.<br>
+When the agent achieves the goal score, the training process will automatically end.<br>
+You can stop the training process whenever you want by hitting `Ctrl + C`.
+
+After training process, the weights and the reward plot will be saved in `/save/` folder automatically.
+
 
 ## 3. Result(Reward Plot)
 The environment was solved in about ~700 episodes.
